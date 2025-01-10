@@ -74,7 +74,7 @@ const HomePage = () => {
             />
             <button
               type="submit"
-              disabled={!query || !!error}
+              disabled={!query || error}
               className="bg-blue-600 text-white py-2 px-4 rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
             >
               Search
