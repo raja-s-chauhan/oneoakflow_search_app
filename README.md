@@ -1,71 +1,136 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```markdown
+# 🌍 Country Search React Application
 
-## Available Scripts
+This project was developed as part of an assignment for **OneOak Media**. The goal was to create a React application that demonstrates key frontend development skills, including:
 
-In the project directory, you can run:
+- **Debouncing** for optimized input handling.
+- **API Integration** for fetching country data dynamically.
+- **Shimmering Effects** to improve the loading experience.
+- **Navigation and State Management** for displaying detailed country information on a new page.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. **Search for Countries**
+- Enter a country name in the input box.
+- **Debouncing** is implemented to delay API calls until the user stops typing, optimizing performance and reducing unnecessary requests.
 
-### `npm test`
+### 2. **Shimmering Effect**
+- While fetching results, a visually appealing **loading skeleton** effect is displayed to enhance the user experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. **Country Suggestions**
+- After fetching, a **list of countries** matching the search query is displayed.
+- Users can either select a country from the list or click the **Submit** button to search directly.
 
-### `npm run build`
+### 4. **Detailed Country Information**
+- On selecting a country or submitting the query, the app navigates to a new page.
+- The details page displays:
+  - The country's **flag**.
+  - **Official Name**.
+  - **Capital**.
+  - **Currency** information.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**: Frontend framework.
+- **React Router**: For seamless navigation between pages.
+- **CSS/Tailwind CSS**: For responsive and modern UI styling.
+- **REST API**: Fetching country data dynamically.
+- **Debouncing**: To optimize input handling and API requests.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📸 Screenshots
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. **Home Page**
+- Input box for searching countries.
+- Shimmering effect during loading.
+- Country suggestions based on the query.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. **Details Page**
+- Displays country details, including flag, name, capital, and currency.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. **Clone the Repository**
+```bash
+git clone https://github.com/your-username/oneoak-country-search.git
+cd oneoak-country-search
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. **Install Dependencies**
+```bash
+npm install
+```
 
-### Code Splitting
+### 3. **Start the Development Server**
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📂 File Structure
 
-### Making a Progressive Web App
+```
+.
+├── src
+│   ├── components
+│   │   ├── CountryCard.jsx        # Component for rendering country details
+│   │   ├── Skeleton.jsx           # Shimmering effect for loading state
+│   │   └── Toast.jsx              # Toast notifications for API responses
+│   ├── hooks
+│   │   └── useCountrySuggestions.js # Custom hook for debounced API calls
+│   ├── pages
+│   │   ├── HomePage.jsx           # Main search page
+│   │   └── ResultsPage.jsx        # Country details page
+│   ├── App.jsx                    # Main app component
+│   └── index.js                   # Entry point
+└── README.md                      # Documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🧩 Key Concepts Demonstrated
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Debouncing**: Implemented in the `useCountrySuggestions` hook to delay API calls.
+- **API Integration**: Utilized REST API for dynamic country search and detailed data fetching.
+- **State Management**: Managed application state using React hooks (`useState`, `useEffect`, `useCallback`).
+- **Loading States**: Added shimmering effects using a reusable `SkeletonCard` component.
+- **Routing**: Managed page transitions with `React Router`.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌟 How It Works
 
-### `npm run build` fails to minify
+### 1. **Home Page**
+- Start typing a country name in the input box.
+- A debounced API call fetches country suggestions.
+- While the results load, a **shimmering effect** is displayed.
+- Click on a suggestion or submit the query to see detailed information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# oneoakflow_search_app
+### 2. **Details Page**
+- Displays additional information, such as the **flag**, **official name**, **capital**, and **currency**.
+
+---
+
+## 💼 About the Assignment
+
+This application was created as part of an assignment for **OneOak Media**. The objective was to demonstrate my React skills, including optimized input handling, API integration, and modern UI/UX practices.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
